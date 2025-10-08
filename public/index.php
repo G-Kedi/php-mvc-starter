@@ -8,7 +8,7 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
-$router = new Router($_SERVER['REQUEST_URI']);
+$router = new Router();
 
 $router->get('/', 'HomeController@index');
 $router->get('/users', 'UserController@index');
