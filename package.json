@@ -1,0 +1,27 @@
+{
+  "name": "php-mvc-starter",
+  "version": "1.0.0",
+  "description": "A modern PHP MVC starter kit with Object-Oriented Programming, Composer autoloading, Node.js integration, and a Singleton database connection. Provides a clean MVC structure, secure routing, and well-commented code for scalable and maintainable PHP applications.",
+  "keywords": [],
+  "homepage": "https://github.com/G-Kedi/php-mvc-starter#readme",
+  "bugs": {
+    "url": "https://github.com/G-Kedi/php-mvc-starter/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/G-Kedi/php-mvc-starter.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.14"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.14"
+  }
+}
