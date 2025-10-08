@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?= htmlspecialchars($title ?? 'MVC Starter') ?></title>
-    <link rel="stylesheet" href="../../public/css/output.css">
+    <link rel="stylesheet" href="<?= PUBLIC_URL ?>css/output.css">
 </head>
 <body>
 
