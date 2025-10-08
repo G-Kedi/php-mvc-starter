@@ -14,7 +14,7 @@ class Database
 
     private function __construct() {} // Prevent direct instantiation
     private function __clone() {}     // Prevent cloning
-    private function __wakeup() {}    // Prevent unserialization
+    public function __wakeup() {}    // Prevent unserialization
 
     /**
      * Get PDO instance
