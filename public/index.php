@@ -12,5 +12,6 @@ $router = new Router($_SERVER['REQUEST_URI']);
 
 $router->get('/', 'HomeController@index');
 $router->get('/users', 'UserController@index');
+$router->get('/user/{id}', 'UserController@show');
 
 $router->run();

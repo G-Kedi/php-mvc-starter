@@ -1,4 +1,5 @@
 <?php
+
 namespace Gkedi\PhpMvcStarter\Core;
 
 class Router
@@ -21,16 +22,26 @@ class Router
      */
     public function run(): void
     {
-        $method = $_SERVER['REQUEST_METHOD'];
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-        if (isset($this->routes[$method][$uri])) {
-            [$controller, $function] = explode('@', $this->routes[$method][$uri]);
-            $controller = "Gkedi\\PhpMvcStarter\\Controllers\\$controller";
-            (new $controller())->$function();
-        } else {
-            http_response_code(404);
-            echo "404 - Page not found";
+        foreach ($this->routes as $route => $config) {
+            // Transformer la route en regex pour matcher les paramètres {param}
+            $pattern = preg_replace('#\{[a-zA-Z0-9_]+\}#', '([a-zA-Z0-9_-]+)', $route);
+            $pattern = '#^' . $pattern . '$#';
+
+            if (preg_match($pattern, $uri, $matches)) {
+                array_shift($matches); // retirer l’URL complète
+
+                $controllerName = $config['controller'];
+                $method = $config['method'];
+
+                $controllerClass = "Gkedi\\PhpMvcStarter\\Controllers\\$controllerName";
+                $controller = new $controllerClass();
+                call_user_func_array([$controller, $method], $matches);
+                return;
+            }
         }
+
+        echo "404 - Page not found";
     }
 }
