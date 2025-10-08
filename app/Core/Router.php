@@ -1,5 +1,5 @@
 <?php
-namespace Gkedi\PhpMvcStater;
+namespace Gkedi\PhpMvcStarter;
 
 class Router
 {
@@ -26,7 +26,7 @@ class Router
 
         if (isset($this->routes[$method][$uri])) {
             [$controller, $function] = explode('@', $this->routes[$method][$uri]);
-            $controller = "Gkedi\\PhpMvcStater\\Controllers\\$controller";
+            $controller = "Gkedi\\PhpMvcStarter\\Controllers\\$controller";
             (new $controller())->$function();
         } else {
             http_response_code(404);
