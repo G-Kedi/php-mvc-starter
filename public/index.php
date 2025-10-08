@@ -2,7 +2,7 @@
 // Include Composer autoloader
 require __DIR__ . '/../vendor/autoload.php';
 
-use Gkedi\PhpMvcStarter\Router;
+use Gkedi\PhpMvcStarter\Core\Router;
 
 // Create a Router instance with the current request URI
 $router = new Router($_SERVER['REQUEST_URI']);

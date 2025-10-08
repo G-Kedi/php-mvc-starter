@@ -1,5 +1,5 @@
 <?php
-namespace Gkedi\PhpMvcStarter;
+namespace Gkedi\PhpMvcStarter\Core;
 
 /**
  * Base Controller class

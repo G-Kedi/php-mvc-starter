@@ -1,7 +1,7 @@
 <?php
 namespace Gkedi\PhpMvcStarter\Controllers;
 
-use Gkedi\PhpMvcStarter\Controller;
+use Gkedi\PhpMvcStarter\Core\Controller;
 
 /**
  * Home page controller
