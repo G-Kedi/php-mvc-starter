@@ -1,14 +1,15 @@
 <?php
-// Include Composer autoloader
 require __DIR__ . '/../vendor/autoload.php';
 
 use Gkedi\PhpMvcStarter\Core\Router;
+use Dotenv\Dotenv;
 
-// Create a Router instance with the current request URI
+// Load environment variables
+$dotenv = Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
+
 $router = new Router($_SERVER['REQUEST_URI']);
 
-// Register routes
 $router->get('/', 'HomeController@index');
 
-// Run the router to handle the request
 $router->run();
