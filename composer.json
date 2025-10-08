@@ -1,0 +1,18 @@
+{
+    "name": "gkedi/php-mvc-starter",
+    "description": "A modern PHP MVC starter project with OOP, PSR-4 autoloading, and Node.js integration",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Gkedi\\PhpMvcStarter\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "G-kedi"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
