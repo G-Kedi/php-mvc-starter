@@ -11,5 +11,6 @@ $dotenv->load();
 $router = new Router($_SERVER['REQUEST_URI']);
 
 $router->get('/', 'HomeController@index');
+$router->get('/users', 'UserController@index');
 
 $router->run();
